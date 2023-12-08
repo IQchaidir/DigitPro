@@ -43,7 +43,11 @@ export default function Navbar() {
             alt="logo"
             width={scrolled ? 40 : 50}
             height={scrolled ? 80 : 100}
-            className="transition-all duration-500"
+            className={` ${
+              scrolled
+                ? `w-auto h-auto transition-all duration-500`
+                : "w-auto h-auto transition-all duration-500"
+            }`}
           />
           <h1
             className={`text-${
@@ -81,15 +85,15 @@ export default function Navbar() {
               Services
             </button>
           </Link>
-          <Link href="/Teams">
-            <button
-              className={`hover:bg-black hover:text-white rounded-md transition-all duration-500 ${
-                scrolled ? "w-16 h-8" : "w-20 h-10"
-              }`}
-            >
-              Teams
-            </button>
-          </Link>
+          {/* <Link href="/Teams"> */}
+          <button
+            className={`hover:bg-black hover:text-white rounded-md transition-all duration-500 ${
+              scrolled ? "w-16 h-8" : "w-20 h-10"
+            }`}
+          >
+            Teams
+          </button>
+          {/* </Link> */}
         </div>
       </div>
     </div>
